@@ -1,0 +1,9 @@
+arduino-ide-bin
+aylurs-gtk-shell
+brave-bin
+pixie-sddm-git
+qview
+visual-studio-code-bin
+wlogout
+yay
+yay-debug

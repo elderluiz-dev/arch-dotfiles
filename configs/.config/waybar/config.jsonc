@@ -1,0 +1,137 @@
+// Waybar Configuration - Minimal Monochromatic Arch Linux (Fedora-Style Pill Container)
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 4,
+
+    // Left Modules: Logo Arch, Workspaces, Window Title
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    // Center Modules: Date & Time Clock
+    "modules-center": [
+        "clock"
+    ],
+
+    // Right Modules: Hardware stats, Network, Audio, Battery, Tray, Power Menu
+    "modules-right": [
+    	"cpu",
+    	"memory",
+        "custom/quicksettings",
+    	"battery"    
+    ],
+
+    "custom/quicksettings": {
+        "format": "󰂯  󰤨   󰕾",
+        "return-type": "json",
+        "exec": "echo '{\"tooltip\": \"Quick Settings\"}'",
+        "on-click": "pkill quickshell || quickshell",
+        "interval": 5
+    },
+
+    // Arch Linux Logo Button
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip-format": "Arch Linux Hyprland",
+        "on-click": "rofi -show drun"
+    },
+
+    // Hyprland Workspaces
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    // Window Title
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 30,
+        "rewrite": {
+            "": "Desktop",
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*) - Google Chrome": " $1",
+            "(.*) - Visual Studio Code": "󰨞 $1",
+            "nvim (.*)": " $1",
+            "kitty": "󰄛 Terminal"
+        },
+        "separate-outputs": true
+    },
+
+    // Clock
+    "clock": {
+        "format": "󰥔   {:%H:%M}",
+        "format-alt": "󰃭   {:%A | %B, %d - %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffffff'><b>{}</b></span>",
+                "days": "<span color='#cccccc'>{}</span>",
+                "weeks": "<span color='#555555'><b>W{}</b></span>",
+                "weekdays": "<span color='#888888'><b>{}</b></span>",
+                "today": "<span color='#ffffff'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // CPU Usage
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+        "interval": 2,
+        "on-click": "alacritty -e btop"
+    },
+
+    // Memory Usage
+    "memory": {
+        "format": "󰍛 {percentage}%",
+        "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB",
+        "interval": 2,
+        "on-click": "alacritty -e btop"
+    },
+
+    // Battery Status
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󱐋 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    // System Tray
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
+    },
+}

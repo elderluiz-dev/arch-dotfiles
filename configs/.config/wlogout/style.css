@@ -1,0 +1,99 @@
+/* ============================================================
+ * Wlogout — Minimal Transparent
+ * ============================================================ */
+
+/* Tela inteira completamente transparente */
+window {
+    background-color: rgba(0, 0, 0, 0.50);
+    background-size: 58px;
+    min-width: 140px;
+    min-height: 140px;
+    margin: 0 28px;
+    font-size: 15px;
+}
+
+/* ============================================================
+ * BOTÕES
+ * ============================================================ */
+
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: 64px;
+
+    border: none;
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    min-width: 150px;
+    min-height: 150px;
+
+    margin: 0 20px;
+
+    box-shadow: none;
+    outline: none;
+}
+
+/* Remove efeitos padrão do GTK */
+button:focus,
+button:active {
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+}
+
+/* ============================================================
+ * HOVER
+ * ============================================================ */
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================================
+ * ÍCONES
+ * ============================================================ */
+
+#shutdown {
+    background-image: url("/home/athlas/.config/wlogout/icons/power.png");
+}
+
+#logout {
+    background-image: url("/home/athlas/.config/wlogout/icons/logout.png");
+}
+
+#reboot {
+    background-image: url("/home/athlas/.config/wlogout/icons/restart.png");
+}
+
+#lock {
+    background-image: url("/home/athlas/.config/wlogout/icons/lock.png");
+}
+
+#hibernate {
+    background-image: url("/home/athlas/.config/wlogout/icons/hibernate.png");
+}
+
+#suspend {
+    background-image: url("/home/athlas/.config/wlogout/icons/suspend.png");
+}
+
+/* ============================================================
+ * LABELS
+ * ============================================================ */
+
+button label {
+    color: #ffffff;
+
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    margin-top: 95px;
+}

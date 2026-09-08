@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$ROFI_RETV" -eq 0 ]; then
+    cliphist list
+    exit 0
+fi
+
+if [ "$ROFI_RETV" -eq 1 ]; then
+    selected="$1"
+    printf '%s' "$selected" | cliphist decode | wl-copy
+    exit 0
+fi
