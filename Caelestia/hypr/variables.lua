@@ -9,7 +9,7 @@ return {
     terminal                   = "foot",
     browser                    = "brave",
     editor                     = "gnome-text-editor",
-    fileExplorer               = "thunar",
+    fileExplorer               = "nautilus",
     audioSettings              = "pwvucontrol",
 
     -- Touchpad
@@ -107,6 +107,7 @@ return {
     kbSystemMonitorWs          = "CTRL + SHIFT + Escape",
     kbMusicWs                  = "SUPER + M",
     kbCommunicationWs          = "SUPER + D",
+    kbGameWs                   = "SUPER + G",
 
     -- Apps
     kbTerminal                 = "SUPER + Q",

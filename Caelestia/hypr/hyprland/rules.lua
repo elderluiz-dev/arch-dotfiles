@@ -194,6 +194,7 @@ create_tag(system_monitor_tag, { workspace = "special:sysmon" })
 create_tag(music_player_tag, { workspace = "special:music" })
 create_tag(communication_app_tag, { workspace = "special:communication" })
 create_tag(todo_app_tag, { workspace = "special:todo" })
+create_tag(game_tag, { workspace = "special:game" })
 
 
 -------------------------

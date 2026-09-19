@@ -119,6 +119,10 @@ local function default_config()
         todo = {
             todoist = { enable = true, match = { { class = "todoist" } }, command = { "todoist" }, move = true },
         },
+        --!!
+        game = {
+            steam  = { enable = true, match = { { class = "steam" } }, command = { "steam" }, move = true },
+        },
     }
 end
 
